@@ -1,5 +1,12 @@
-import java.util.Stack;
+class ValueNode extends Node {
+    private boolean value;
 
-abstract class Node {
-    abstract boolean evaluate();
+    public ValueNode(boolean value) {
+        this.value = value;
+    }
+
+    @Override
+    boolean evaluate() {
+        return value;
+    }
 }

@@ -1,7 +1,16 @@
-using System;
-using System.Collections.Generic;
-
-public abstract class Node
+public class AndNode : Node
 {
-    public abstract bool Evaluate();
+    private Node left;
+    private Node right;
+
+    public AndNode(Node left, Node right)
+    {
+        this.left = left;
+        this.right = right;
+    }
+
+    public override bool Evaluate()
+    {
+        return left.Evaluate() && right.Evaluate();
+    }
 }
